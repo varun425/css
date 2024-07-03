@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .card {
+            width: 320px;
+            height: 200px;
+            background: linear-gradient(135deg, #70e1f5, #ffd194);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: #fff;
+            font-family: Arial, sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .logo img {
+            width: 40px;
+            margin-right: 10px;
+        }
+        .chip {
+            width: 50px;
+            height: 35px;
+            background-color: #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .number {
+            font-size: 18px;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+        .name {
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+        .visa {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+        }
+    </style>
+    <title>Credit Card</title>
+</head>
+<body>
+    <div class="card">
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Regions_Bank.svg/1200px-Regions_Bank.svg.png" alt="Regions Logo">
+            <span>Cash Rewards</span>
+        </div>
+        <div class="chip"></div>
+        <div class="number">4359 2345 6789 1011</div>
+        <div class="name">Fine M. Customer</div>
+        <div class="visa">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Visa_2014_logo_detail.svg/1200px-Visa_2014_logo_detail.svg.png" alt="Visa Logo" width="60">
+        </div>
+    </div>
+</body>
+</html>

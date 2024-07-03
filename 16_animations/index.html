@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 100vh;
+            background-color: whitesmoke;
+            box-sizing: border-box;
+            display: flex;
+            align-self: center;
+            justify-content: center;
+        }
+
+        .spiner {
+            display: flex;
+            align-self: center;
+            justify-content: center;
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            border: 25px solid whitesmoke;
+            border-top: 25px solid whitesmoke; 
+            animation: round_ 1.23s linear infinite ;
+            box-shadow:  5px 5px 10px #bebebe , -5px -5px 10px #ffffff;
+        
+        }
+
+        @keyframes round_{
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="spiner">
+    </div>
+
+</body>
+
+</html>

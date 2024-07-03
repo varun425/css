@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="banner">
+        <div class="slider" id="slider" style="--quantity:10">
+            <div class="item" style="--position:1"><img src="pepe1.jpg" alt=""></div>
+            <div class="item" style="--position:2"><img src="pepe5.png" alt=""></div>
+            <div class="item" style="--position:3"><img src="pepe3.jpeg" alt=""></div>
+            <div class="item" style="--position:4"><img src="profile.jpeg" alt=""></div>
+            <div class="item" style="--position:5"><img src="download.jpeg" alt=""></div>
+            <div class="item" style="--position:6"><img src="pepe5.png" alt=""></div>
+            <div class="item" style="--position:7"><img src="pepe1.jpg" alt=""></div>
+            <div class="item" style="--position:8"><img src="pepe3.jpeg" alt=""></div>
+            <div class="item" style="--position:9"><img src="profile.jpeg" alt=""></div>
+            <div class="item" style="--position:10"><img src="download.jpeg" alt=""></div>
+        </div>
+        <button id="toggle-animation">Stop</button>
+    </div>
+</body>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const slider = document.getElementById('slider');
+  const toggleButton = document.getElementById('toggle-animation');
+  let isPlaying = true;
+  let startX = 0;
+  let currentRotation = 0;
+
+  toggleButton.addEventListener('click', function () {
+    isPlaying = !isPlaying;
+    if (isPlaying) {
+      slider.style.animationPlayState = 'running';
+      toggleButton.textContent = 'Stop';
+    } else {
+      slider.style.animationPlayState = 'paused';
+      toggleButton.textContent = 'Play';
+    }
+  });
+
+  slider.addEventListener('mousedown', function (event) {
+    if (isPlaying) return; // Do nothing if animation is playing
+    startX = event.clientX;
+    slider.style.animation = 'none';
+
+    const onMouseMove = (moveEvent) => {
+      const moveX = moveEvent.clientX - startX;
+      const newRotation = currentRotation + moveX / 5;
+      slider.style.transform = `perspective(1000px) rotateX(-15deg) rotateY(${newRotation}deg)`;
+    };
+
+    const onMouseUp = () => {
+      currentRotation += (event.clientX - startX) / 5;
+      document.removeEventListener('mousemove', onMouseMove);
+      document.removeEventListener('mouseup', onMouseUp);
+    };
+
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseup', onMouseUp);
+  });
+});
+</script>
+</html>

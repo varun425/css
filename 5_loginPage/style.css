@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+:root {
+  --background-gradient: linear-gradient(
+    135deg,
+    #c3cfe2 0%,
+    #c3cfe2 35%,
+    #e2e2e2 100%
+  );
+  --wrapper-background: #02c2a2;
+  --title-background: #09b3a4;
+}
+
+body.night-mode {
+  --background-gradient: linear-gradient(
+    135deg,
+    #2e3a47 0%,
+    #2e3a47 35%,
+    #1b1b1b 100%
+  );
+  --wrapper-background: #1b1b1b;
+  --title-background: #121212;
+}
+
+* {
+  font-family: "Inter", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  /* background: var(--background-gradient); */
+  /* transition: background 0.5s ease; */
+}
+
+.wrapper {
+  width: 300px;
+  height: auto;
+  background: #02c2a2;
+  border-radius: 5px;
+  background: var(--background-gradient);
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  line-height: 80px;
+  border-radius: 5px 5px 0 0px;
+  background-color: #09b3a4;
+  background: var(--background-gradient);
+}
+
+.wrapper .form {
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  padding: 30px 20px 25px 20px;
+}
+
+.wrapper .row {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.wrapper form .row input {
+  height: 40px;
+  width: 100%;
+  border: #fff;
+  padding-left: 60px;
+  border: 1px solid #fff;
+  box-sizing: border-box;
+  background: var(--background-gradient);
+}
+
+.wrapper form .row input:focus {
+  outline: none; /* Remove the default outline on focus */
+}
+
+.wrapper form .row i {
+  position: absolute;
+  width: 40px;
+  height: 100%;
+  background-color: #2ba570;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.toggle-btn {
+  width: 16%;
+  height: 40px;
+  background-color: #2ba570;
+  border: none;
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 50%;
+  /* display: flex;
+  justify-content:flex-end;
+  align-items: center; */
+}
+
+.lgn-btn {
+  width: 100%;
+  height: 40px;
+}
+
+.row .frg-psswrd {
+  /* background-color: red; */
+  font-size: 10px;
+  font-weight: 500;
+  /* position: absolute; */
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+
+.row .signup {
+  /* background-color: red; */
+  display: flex;
+  margin-top: 30px;
+  justify-content: center;
+  text-decoration: underline;
+  cursor: pointer;
+  color: black;
+}
+

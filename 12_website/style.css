@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #b0c4de; /* Soft blue background */
+  font-family: "Arial, sans-serif";
+}
+
+.neomorphic-navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d3d3e1; /* Slightly darker shade */
+  box-shadow: inset 5px 5px 10px #a0a8b8, inset -5px -5px 10px #ffffff;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px;
+}
+
+.neomorphic-navbar ul li {
+  margin: 12px 12px 0 0;
+  list-style: none;
+}
+
+.neomorphic-navbar ul li a {
+  text-decoration: none;
+  color: #333;
+  transition: all 0.1s ease-in-out;
+  font-size: 20px;
+  padding: 8px 15px;
+  border-radius: 8px;
+  background-color: #d3d3e1;
+  box-shadow: inset 5px 5px 10px #a0a8b8, inset -5px -5px 10px #ffffff;
+}
+
+.neomorphic-navbar ul li a:hover {
+  box-shadow: 5px 5px 10px #a0a8b8, -5px -5px 10px #ffffff;
+}
+
+/* ---------weather app------------- */
+
+.wrapper {
+  height: 500px;
+  width: 300px;
+  margin-left: 20px;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px #a0a8b8, -5px -5px 10px #ffffff;
+}
+
+.header {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  position: relative;
+  top: 12px;
+}
+
+.header .screen {
+  width: 240px;
+  height: 280px;
+  position: relative;
+  top: 12px;
+  left: 30px;
+  box-shadow: inset 5px 5px 10px #a0a8b8, inset -5px -5px 10px #ffffff;
+  border-radius: 20px;
+  background-image: url("./img.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.forecast-container {
+  width: 260px;
+  height: 95px;
+  position: relative;
+  left: 20px;
+  margin-top: 35px;
+  border-radius: 20px;
+}
+
+.forecast-container {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.forecast-container > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 4px; /* Increase margin to create more space between divs */
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px #bebebe, -5px -5px 15px #ffffff;
+  /* background: #e0e0e0; */
+  transition: transform 0.3s ease-in-out;
+}
+
+.forecast-container > div i {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.forecast-container > div span {
+  font-size: 18px;
+  color: #fff;
+}
+
+.forecast-container > div:hover {
+  transform: translateY(-5px);
+}

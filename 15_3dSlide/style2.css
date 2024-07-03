@@ -1,0 +1,70 @@
+.banner {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    background-color: #ecf0f3;
+  }
+  
+  .banner .slider {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    top: 30%;
+    left: calc(50% - 100px);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    animation: autoRun 20s linear infinite;
+    background: #ecf0f3;
+    border-radius: 15px;
+    box-shadow: 8px 8px 15px #babecc, -8px -8px 15px #ffffff;
+  }
+  
+  @keyframes autoRun {
+    from {
+      transform: perspective(1000px) rotateX(-15deg) rotateY(0deg);
+    }
+    to {
+      transform: perspective(1000px) rotateX(-15deg) rotateY(360deg);
+    }
+  }
+  
+  .banner .slider.stopped {
+    animation-play-state: paused;
+  }
+  
+  .banner .slider .item {
+    position: absolute;
+    inset: 0 0 0 0;
+    transform: rotateY(calc((var(--position) - 1) * (360 / var(--quantity) * 1deg)))
+      translateZ(350px);
+  }
+  
+  .banner .slider .item img {
+    border-radius: 12px;
+    width: 90%;
+    height: 100%;
+    object-fit: cover;
+    background: #ecf0f3;
+    box-shadow: 4px 4px 10px #babecc, -4px -4px 10px #ffffff;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .banner .slider .item img:hover {
+    box-shadow: 4px 4px 15px #babecc, -4px -4px 15px #ffffff;
+  }
+  
+  #toggle-animation {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px #babecc, -4px -4px 10px #ffffff;
+    cursor: pointer;
+  }
+      

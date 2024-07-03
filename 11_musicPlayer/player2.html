@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Music Player</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Playwrite+ES+Deco:wght@100..400&display=swap");
+        @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ececec;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            background: linear-gradient(
+                235deg,
+                #25a5a3 0%,
+                #9198e5 25%,
+                #78b4ea 50%,
+                #afade9 75%,
+                #57c2a2 100%
+            );
+            height: 450px;
+            width: 360px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            font-family: "Playwrite ES Deco", cursive;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .screen {
+            height: 200px;
+            width: 100%;
+            border-radius: 10px;
+            background-image: url("./img.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border: solid 0.5px #166067;
+            margin-bottom: 20px;
+        }
+
+        .song-title {
+            font-size: 18px;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .timer {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .progress-bar {
+            flex-grow: 1;
+            height: 8px;
+            background-color: #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress {
+            height: 100%;
+            background-color: #76c7c0;
+            width: 0;
+            transition: width 0.2s;
+        }
+
+        .time {
+            font-size: 12px;
+            color: #fff;
+            margin: 0 5px;
+        }
+
+        .player-section {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+        }
+
+        .player-section button {
+            border-radius: 50%;
+            height: 40px;
+            width: 40px;
+            margin: 10px;
+            outline: none;
+            border: solid 0.5px #166067;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 700;
+            background-color: #afade9;
+            transition: all 0.2s ease-in-out;
+            color: #fff;
+        }
+
+        .player-section button:hover {
+            background-color: #166067;
+            transform: scale(1.2);
+        }
+
+        .player-section .start-stop {
+            height: 60px;
+            width: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            Music player
+        </div>
+
+        <div class="screen">
+            <!-- Screen content goes here -->
+        </div>
+
+        <div class="song-title">
+            Song Title
+        </div>
+
+        <div class="timer">
+            <span class="time current-time">0:00</span>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+            <span class="time total-time">3:30</span>
+        </div>
+
+        <div class="player-section">
+            <button class="previous"><<</button>
+            <button class="down">-</button>
+            <button class="start-stop"><i class="fa fa-play"></i></button>
+            <button class="up">+</button>
+            <button class="next">>></button>
+        </div>
+    </div>
+
+    <audio id="audio" src="sajni.mp3"></audio>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const audio = document.getElementById('audio');
+            const playButton = document.querySelector('.start-stop');
+            const progressBar = document.querySelector('.progress');
+            const currentTimeElement = document.querySelector('.current-time');
+            const totalTimeElement = document.querySelector('.total-time');
+            const previousButton = document.querySelector('.previous');
+            const nextButton = document.querySelector('.next');
+            const upButton = document.querySelector('.up');
+            const downButton = document.querySelector('.down');
+            let isPlaying = false;
+
+            const playlist = [
+                { title: "sajni re ", src: "sajni.mp3" },
+                { title: "Song 2", src: "song2.mp3" },
+                { title: "Song 3", src: "song3.mp3" }
+            ];
+            let currentSongIndex = 0;
+
+            function loadSong(index) {
+                const song = playlist[index];
+                audio.src = song.src;
+                document.querySelector('.song-title').textContent = song.title;
+                audio.load();
+            }
+
+            playButton.addEventListener('click', function () {
+                if (isPlaying) {
+                    audio.pause();
+                    playButton.innerHTML = '<i class="fa fa-play"></i>';
+                } else {
+                    audio.play();
+                    playButton.innerHTML = '<i class="fa fa-pause"></i>';
+                }
+                isPlaying = !isPlaying;
+            });
+
+            audio.addEventListener('timeupdate', function () {
+                const progressPercentage = (audio.currentTime / audio.duration) * 100;
+                progressBar.style.width = progressPercentage + '%';
+
+                const currentMinutes = Math.floor(audio.currentTime / 60);
+                const currentSeconds = Math.floor(audio.currentTime % 60).toString().padStart(2, '0');
+                currentTimeElement.textContent = `${currentMinutes}:${currentSeconds}`;
+            });
+
+            audio.addEventListener('loadedmetadata', function () {
+                const totalMinutes = Math.floor(audio.duration / 60);
+                const totalSeconds = Math.floor(audio.duration % 60).toString().padStart(2, '0');
+                totalTimeElement.textContent = `${totalMinutes}:${totalSeconds}`;
+            });
+
+            previousButton.addEventListener('click', function () {
+                if (currentSongIndex > 0) {
+                    currentSongIndex--;
+                } else {
+                    currentSongIndex = playlist.length - 1;
+                }
+                loadSong(currentSongIndex);
+                audio.play();
+                isPlaying = true;
+                playButton.innerHTML = '<i class="fa fa-pause"></i>';
+            });
+
+            nextButton.addEventListener('click', function () {
+                if (currentSongIndex < playlist.length - 1) {
+                    currentSongIndex++;
+                } else {
+                    currentSongIndex = 0;
+                }
+                loadSong(currentSongIndex);
+                audio.play();
+                isPlaying = true;
+                playButton.innerHTML = '<i class="fa fa-pause"></i>';
+            });
+
+            upButton.addEventListener('click', function () {
+                if (audio.volume < 1) {
+                    audio.volume = Math.min(1, audio.volume + 0.1);
+                }
+            });
+
+            downButton.addEventListener('click', function () {
+                if (audio.volume > 0) {
+                    audio.volume = Math.max(0, audio.volume - 0.1);
+                }
+            });
+
+            loadSong(currentSongIndex);
+        });
+    </script>
+</body>
+
+</html>

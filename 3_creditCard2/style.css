@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+NG+Modern:wght@100..400&display=swap");
+
+* {
+  font-family: "Playwrite NG Modern", cursive;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  background-color: antiquewhite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-card {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* justify-content: space-between; */
+  max-width: 450px;
+  height: auto;
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  /* margin-left: 45px; */
+  /* position: relative; */
+  font-size: 14px;
+  font-weight: 600;
+  padding: 15px;
+  overflow: hidden;
+}
+.main-card .header {
+  color: white;
+  /* margin: 15px; */
+  display: flex;
+  align-items: center;
+}
+.main-card .card-logo {
+  width: 60px;
+  height: 60px;
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: space-between; */
+}
+
+.main-card .card-chip {
+  width: 60px;
+  height: 50px;
+}
+
+.main-card .title {
+  color: white;
+  display: flex;
+  align-items: center;
+  font-size: 34px;
+  /* flex-direction: column;
+  justify-content: space-between; */
+  /* align-items: flex-end; */
+  /* margin-left: 15px; */
+}
+
+.main-card .card-number {
+  color: white;
+  letter-spacing: 2px;
+}
+
+.main-card .valid-thru {
+  color: white;
+  font-size: 7px;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.main-card .card-name {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.main-card .footer-title {
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+}

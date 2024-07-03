@@ -1,0 +1,67 @@
+  @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+  * {
+    font-family: "Open Sans", sans-serif;
+  }
+
+  body {
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .main-card {
+    background-color: rgb(241, 172, 22);
+    width: 400px;
+    height: auto;
+    border-radius: 15px;
+  }
+
+  .main-card .header {
+    font-size: 55px;
+    font-weight: 500;
+    font-style: italic;
+    padding-left: 15px;
+    color: gold;
+    text-shadow: 0 3px 2px rgb(0, 0, 0.2);
+  }
+
+  .main-card .card-chip {
+    width: 50px;
+    height: auto;
+    padding-left: 15px;
+  }
+
+  .main-card .card-number {
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    padding-left: 15px;
+  }
+
+  .main-card .valid-thru {
+    font-size: 8px;
+    font-weight: 700;
+    /* letter-spacing: 2px; */
+    /* padding-left: 15px; */
+  /* margin-left: 40px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5px;
+  }
+
+  .main-card .card-type {
+    width: 60px;
+    height: 50px;
+    background-color:antiquewhite;
+    border-radius: 20%;
+    margin-left: 95px;
+  }
+
+  .main-card .card-name {
+      padding-left: 15px;
+      padding-bottom: 15px;
+  }

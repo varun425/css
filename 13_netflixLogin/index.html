@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html class="no-js"> <!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Netflix</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        body {
+            background-image: url("netflixbg.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header {
+            position: fixed;
+            top: -44px;
+            left: 0;
+            width: 100%;
+            /* padding: 16px; */
+            /* display: flex; */
+            /* align-items: center; */
+            /* background: rgba(0, 0, 0, 0.7); */
+            /* semi-transparent background */
+            width: 148px;
+            height: auto;
+            left: 162px;
+            /* background-color: green; */
+        }
+
+
+        .img {
+            height: auto;
+            width: 148px;
+        }
+
+        .login {
+            height: 100vh;
+            background-color: rgb(0, 0, 0, .9);
+            height: 600px;
+            width: 400px;
+            padding: 50px;
+            border-radius: 6px;
+            /* flex-direction: column; */
+        }
+
+        .login .header2 {
+            padding-bottom: 12px;
+            color: white;
+            font-size: 32px;
+            font-style: bold;
+            font-weight: 700;
+        }
+
+        .login .main-box .email {
+
+            width: 100%;
+            line-height: 1.5;
+            padding-top: 1.2rem;
+            padding-right: 1rem;
+            padding-bottom: 0.5rem;
+            padding-left: 1rem;
+            border-radius: 4px;
+            border: 0.2px solid rgb(97, 95, 95);
+            color: white;
+            background-color: rgba(38, 37, 37, 0.453);
+
+        }
+
+        .login .main-box .password {
+            width: 100%;
+            line-height: 1.5;
+            padding-top: 1.2rem;
+            padding-right: 1rem;
+            padding-bottom: 0.5rem;
+            padding-left: 1rem;
+            margin-top: 12px;
+            border-radius: 4px;
+            border: 0.2px solid rgb(97, 95, 95);
+            background-color: rgba(38, 37, 37, 0.453);
+            color: white;
+        }
+
+        .signin {
+            width: 100%;
+            height: 40px;
+            margin-top: 12px;
+            background-color: red;
+            border-width: 0.0625rem;
+            border-radius: calc(0.25rem - 0.0625rem);
+            border-color: rgba(0, 0, 0, 0);
+            color: white;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+
+        .signin-code {
+            width: 100%;
+            height: 40px;
+            margin-top: 32px;
+            background-color: rgba(53, 53, 53, 0.546);
+            border-width: 0.0625rem;
+            border-radius: calc(0.25rem - 0.0625rem);
+            border-color: rgba(0, 0, 0, 0);
+            color: white;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+
+        }
+
+        .footer-mid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            cursor: pointer;
+
+        }
+
+        .frg {
+            color: white;
+            position: relative;
+            margin-top: 20px;
+
+        }
+
+        .frg:hover {
+            text-decoration: underline;
+        }
+
+
+        .or {
+            color: grey;
+            position: relative;
+            left: 140px;
+            top: 20px;
+        }
+
+        .checkbox {
+            color: white;
+            border-radius: 0px;
+
+        }
+
+        .signup {
+            color: white;
+            position: relative;
+            top: 15px;
+        }
+
+        p {
+            color: white;
+            margin-top: 35px;
+            font-size: 14px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div class="full-page">
+        <div class="header">
+            <img class="img" src="logo-removebg-preview.png" alt="Logo">
+        </div>
+
+        <div class="login">
+            <div class="header2">Sign In</div>
+            <div class="main-box">
+                <input type="email" class="email" placeholder="Email or mobile number">
+                <input type="password" class="password" placeholder="Password">
+
+            </div>
+            <input type="submit" value="Sign In" class="signin">
+            <span class="or">OR</span>
+
+            <div class="footer-mid">
+                <input type="submit" value="Use a sign-in-code" class="signin-code">
+                <span class="frg">Forgot Password</span>
+
+            </div>/
+
+            <div class="footer">
+
+                <div class="checkbox">
+                    <input style="cursor: pointer;" type="checkbox" value=""> <span style="margin-left: 6px;">Remember
+                        me</span>
+                </div>
+                <div class="signup">
+                    <span>New to Netflix? </span>
+                    <a href="#" style="color: white; font-size: 18px; text-decoration: none;">Sign up now.</a>
+                </div>
+
+                <p> This page is protected by Google reCAPTCHA to ensure you're not a bot.<a
+                        style="color: blue; cursor: pointer;">Learn
+                        more.</a></p>
+
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="" async defer></script>
+</body>
+
+</html>
