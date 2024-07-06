@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nav Bar</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <nav>
+    <ul class="side-bar">
+      <li  onclick=closeBar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+            width="24px" fill="#e8eaed">
+            <path
+              d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+          </svg></svg></a></li>
+      <li ><a href="#">AirDrop</a></li>
+      <li ><a href="#">Resources</a></li>
+      <li ><a href="#">Contact</a></li>
+      <li ><a href="#">Faq</a></li>
+    </ul>
+  </nav>
+
+  <nav>
+    <ul>
+      <li><a href="#">Logo</a></li>
+      <li class="hide-on-mobile" ><a href="#">AirDrop</a></li>
+      <li class="hide-on-mobile" ><a href="#">Resources</a></li>
+      <li class="hide-on-mobile" ><a href="#">Contact</a></li>
+      <li class="hide-on-mobile" ><a href="#">Faq</a></li>
+      <li class="menu-btn" onclick=displayBar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px"
+            viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+            <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+          </svg></a></li>
+    </ul>
+  </nav>
+
+  <script>
+
+    function displayBar() {
+      const res = document.querySelector(".side-bar");
+      res.style.display = "flex"
+    }
+
+    function closeBar(){
+      const res  = document.querySelector(".side-bar");
+      res.style.display = "none";
+
+    }
+  </script>
+</body>
+
+</html>
