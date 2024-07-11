@@ -1,3 +1,4 @@
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 * {
@@ -20,6 +21,7 @@ nav {
   display: flex;
   justify-content: space-between;
   padding: 10px;
+  align-items: center;
 }
 
 nav ul {
@@ -101,15 +103,25 @@ nav li a:hover {
 .right-side li {
   color: gray;
 }
+.right-side li  {
+  display: flex;
+  align-items: center;
+}
 
-.right-side li:last-child a {
+.right-side li .btn-1 {
   color: #fc72ff;
   background-color: #311c31;
   padding: 10px;
   border-radius: 20px;
+  cursor: pointer;
+  border: none;
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
-.right-side li:last-child a:hover {
+.right-side li .btn-1:hover {
   background-color: #351e35;
 }
 
@@ -251,3 +263,12 @@ nav li a:hover {
   top: 190px;
   z-index: 1;
 }
+
+
+
+
+
+
+
+
+
